@@ -1,38 +1,46 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/lk0sCi
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
+-- Original code was exported from QuickDBD and then updated to be more easily understood
 
+-- Drop Tables if they exist
+Drop table if exists category cascade;
+Drop table if exists subcategory cascade;
+Drop table if exists contacts cascade;
+Drop table if exists campaign cascade;
 
-CREATE TABLE "crowdfunding" (
-    "cf_id" int   NOT NULL,
-    "contact_id" char(4)   NOT NULL,
-    "company_name" varchar(50)   NOT NULL,
-    "blurb" varchar(100)   NOT NULL,
-    "goal" int   NOT NULL,
-    "pledged" int   NOT NULL,
-    "outcome" varchar(10)   NOT NULL,
-    "backers_count" int   NOT NULL,
-    "country" char(2)   NOT NULL,
-    "currency" char(3)   NOT NULL,
-    "launched_at" datetime   NOT NULL,
-    "deadline" datetime   NOT NULL,
-    "staff_pick" bool   NOT NULL,
-    "spotlight" bool   NOT NULL,
-    "category_n_subcategory" varchar(50)   NOT NULL,
-    CONSTRAINT "pk_crowdfunding" PRIMARY KEY (
-        "cf_id"
-     )
+-- Create tables
+CREATE TABLE "category" (
+    "category_id" CHAR(4)   NOT NULL primary key,
+    "category" VARCHAR(13)   NOT NULL,
+    "Last_Updated" Timestamp default localtimestamp  NOT NULL
+);
+
+CREATE TABLE "subcategory" (
+    "subcategory_id" VARCHAR(8)   NOT NULL primary key,
+    "subcategory" VARCHAR(25)   NOT NULL,
+    "Last_Updated" Timestamp default localtimestamp  NOT NULL
 );
 
 CREATE TABLE "contacts" (
-    "contact_id" char(4)   NOT NULL,
-    "name" varchar(30)   NOT NULL,
-    "email" varchar(100)   NOT NULL,
-    CONSTRAINT "pk_contacts" PRIMARY KEY (
-        "contact_id"
-     )
+    "contact_id" INT   NOT NULL primary key,
+    "first_name" VARCHAR(30)   NOT NULL,
+    "last_name" VARCHAR(30)   NOT NULL,
+    "email" VARCHAR(50)   NOT NULL,
+    "Last_Updated" Timestamp default localtimestamp   NOT NULL
 );
 
-ALTER TABLE "contacts" ADD CONSTRAINT "fk_contacts_contact_id" FOREIGN KEY("contact_id")
-REFERENCES "crowdfunding" ("contact_id");
-
+CREATE TABLE "campaign" (
+    "cf_id" INT   NOT NULL primary key,
+    "contact_id" INT   NOT NULL references contacts (contact_id),
+    "company_name" VARCHAR(50)   NOT NULL,
+    "description" VARCHAR(30)   NOT NULL,
+    "goal" FLOAT   NOT NULL,
+    "pledged" FLOAT   NOT NULL,
+    "outcome" VARCHAR(11)   NOT NULL,
+    "backers_count" INT   NOT NULL,
+    "country" VARCHAR(4)   NOT NULL,
+    "currency" VARCHAR(4)   NOT NULL,
+    "category_id" CHAR(4)   NOT NULL references category (category_id),
+    "subcategory_id" VARCHAR(8)   NOT NULL references subcategory (subcategory_id),
+    "Last_Updated" Timestamp default localtimestamp  NOT NULL
+);

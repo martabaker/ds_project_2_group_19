@@ -1,0 +1,35 @@
+category
+-
+category_id CHAR(4) PK FK >- campaign.category_id
+category VARCHAR(13)
+Last_Updated Timestamp
+
+subcategory
+-
+subcategory_id VARCHAR(8) PK FK >- campaign.subcategory_id
+subcategory VARCHAR(25)
+Last_Updated Timestamp
+
+contacts
+-
+contact_id INT PK FK >- campaign.contact_id
+first_name VARCHAR(30)
+last_name VAARCHAR(30)
+email VARCHAR(50)
+Last_Updated Timestamp
+
+campaign
+-
+cf_id INT PK
+contact_id INT
+company_name VARCHAR(50)
+description VARCHAR(30)
+goal FLOAT
+pledged FLOAT
+outcome VARCHAR(11)
+backers_count INT
+country VARCHAR(4)
+currency VARCHAR(4)
+category_id CHAR(4)
+subcategory_id VARCHAR(8)
+Last_Updated Timestamp
