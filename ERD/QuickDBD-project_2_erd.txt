@@ -30,6 +30,8 @@ outcome VARCHAR(11)
 backers_count INT
 country VARCHAR(4)
 currency VARCHAR(4)
+launched_date timestamp
+end_date timestamp
 category_id CHAR(4)
 subcategory_id VARCHAR(8)
 Last_Updated Timestamp
