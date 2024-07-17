@@ -14,7 +14,7 @@ contacts
 -
 contact_id INT PK FK >- campaign.contact_id
 first_name VARCHAR(30)
-last_name VAARCHAR(30)
+last_name VARCHAR(30)
 email VARCHAR(50)
 Last_Updated Timestamp
 
