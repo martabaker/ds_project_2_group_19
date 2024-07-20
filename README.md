@@ -26,6 +26,10 @@ Data Science Bootcamp Project 2
 7. Matplotlib
 8. json
 
+## Images
+![Campaign Outcomes by Month](campaign_outcomes_by_month.png)
+![Campaign Outcomes per category](campaign_outcomes_per_category.png)
+
 ## Authors
 1. Marta Baker
 2. Paris Lee (parispotatoes)
