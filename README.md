@@ -34,7 +34,7 @@ Data Science Bootcamp Project 2
 ![Campaign Outcomes per category](campaign_outcomes_per_category.png)
 
 ## Authors
-1. Marta Baker
+1. Marta Baker (martabaker)
 2. Paris Lee (parispotatoes)
 3. Earl Lewis (earl9703)
 
