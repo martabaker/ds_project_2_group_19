@@ -2,12 +2,13 @@
 Data Science Bootcamp Project 2
 
 ## Data Origin
-1. Crowdfunding Data: Contains details about 1000 projects, including their description, goals, pledged amounts, and pass/fail outcomes.
-2. Contact Data: Holds contact points for each crowdfunding project, such as names and email addresses, stored in a separate table.
+1. Crowdfunding Data: Excel table with 1000 projecs that included: description, funding goal, pledged amount, outcome of the campaign, campaign launch date, campaign end date, category and sub-category, etc.
+2. Contact Data: List of dictionaries holding contact information for each campaign. The lists included the campaign id, the contact person's name, and their email.
 
 ## Purpose of the Project
-1. Database Design: Create a database schema using primary and foreign keys, null and data type constraints, and default values.
+1. Database Design: Practice creating a database schema with primary and foreign key constraints, null and data type constraints, and a last_updated column to track when new values are added to the database.
 2. ETL Pipeline: Develop an ETL pipeline to extract data from the source, transform it to fit the database schema, and load it into the database.
+3. Analysis: Use the database to answer key questions
 
 ## Tools and Libraries Used
 1. QuickDB
@@ -26,8 +27,10 @@ Data Science Bootcamp Project 2
 7. Matplotlib
 8. json
 
-## Images
+## Questions
+1. Outcomes by Month that Projects were Started
 ![Campaign Outcomes by Month](campaign_outcomes_by_month.png)
+2. Outcomes per Category
 ![Campaign Outcomes per category](campaign_outcomes_per_category.png)
 
 ## Authors
